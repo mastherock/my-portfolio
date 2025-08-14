@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Blog posts ko koi bhi padh sakta hai (public read access)
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if request.auth != null; // Sirf login kiye hue users likh sakte hain (future ke liye)
+    }
+
+    // Baki sabhi collections ko private rakhein
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
