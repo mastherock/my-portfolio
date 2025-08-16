@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Personal portfolio of Mashuk, a full-stack developer, showcasing projects, skills, and services.",
   icons: {
-    icon: "public/mashuk-profile.jpg", // This is the new favicon line
+    icon: "mashuk--portfolio.ico", // This is the new favicon line
   },
   openGraph: {
     title: "Mashuk - Full-Stack Developer",
